@@ -12,8 +12,8 @@ sizePicker.addEventListener('submit', function (event) {
 
 // Getting height and width input values
 function makeGrid() {
-    let inputHeight = document.querySelector('#inputHeight').value;
-    let inputWidth = document.querySelector('#inputWidth').value;
+    let providedHeight = document.querySelector('#inputHeight').value;
+    let prodivedWidth = document.querySelector('#inputWidth').value;
 
     // This clears any existing grids
     while (pixelCanvas.firstElementChild) {
@@ -22,11 +22,11 @@ function makeGrid() {
 
     //creates grid boxes
     // creates rows equivalent to the given height
-    for (let row = 0; row < inputHeight; row++){
+    for (let row = 0; row < providedHeight; row++){
         let tableRow = document.createElement('tr');
         pixelCanvas.appendChild(tableRow);
         // creates cells equivalent to the given width
-        for (let box = 0; box < inputWidth; box++) {
+        for (let box = 0; box < providedWidth; box++) {
             let tableBox = document.createElement('td')
             tableRow.appendChild(tableBox);
 
