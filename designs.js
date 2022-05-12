@@ -24,11 +24,11 @@ function makeGrid() {
     // creates rows equivalent to the given height
     for (let row = 0; row < providedHeight; row++){
         let tableRow = document.createElement('tr');
-        pixelCanvas.appendChild(tableRow);
+        pixelCanvas.append(tableRow);
         // creates cells equivalent to the given width
         for (let box = 0; box < providedWidth; box++) {
             let tableBox = document.createElement('td')
-            tableRow.appendChild(tableBox);
+            tableRow.append(tableBox);
 
             tableBox.addEventListener('click', function() { // adds chosen color on each click
                 tableBox.style.backgroundColor = selectColor.value;
