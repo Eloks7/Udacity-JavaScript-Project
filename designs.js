@@ -1,12 +1,12 @@
 // Select color input
-const sizePicker = document.querySelector('form'); // sizePicker or form can go into the bracket
-const colorPicker = document.querySelector('#colorPicker');
-const pixelCanvas = document.querySelector('#pixelCanvas');
+const selectSize = document.querySelector('form'); // #sizePicker or form can go into the bracket
+const selectColor = document.querySelector('#colorPicker');
+const artBoard = document.querySelector('#pixelCanvas');
 
 
 // When size is submitted by the user, call makeGrid()
-sizePicker.addEventListener('submit', function (event) {
-    event.preventDefault();
+selectSize.addEventListener('submit', function (call) {
+    call.preventDefault();
     makeGrid();
 })
 
@@ -16,8 +16,8 @@ function makeGrid() {
     let prodivedWidth = document.querySelector('#inputWidth').value;
 
     // This clears any existing grids
-    while (pixelCanvas.firstElementChild) {
-        pixelCanvas.removeChild(pixelCanvas.firstElementChild)
+    while (artBoard.firstElementChild) {
+        artBoard.removeChild(artBoard.firstElementChild)
     }
 
     //creates grid boxes
@@ -31,7 +31,7 @@ function makeGrid() {
             tableRow.appendChild(tableBox);
 
             tableBox.addEventListener('click', function() { // adds chosen color on each click
-                tableBox.style.backgroundColor = colorPicker.value;
+                tableBox.style.backgroundColor = selectColor.value;
             })
         }
 
